@@ -2,6 +2,13 @@
 #include <stdlib.h>
 #include <string.h>
 
+/*
+Lista de Exercícios - Ponteiros 2
+Autor: Vinicius Ribas Bida
+RA: 25070323
+Data: 30/09/2025
+*/
+
 const char* contem_string(const char *str, const char *str2) {
     if (str == NULL || str2 == NULL) {
         return NULL;
@@ -29,6 +36,35 @@ const char* contem_string(const char *str, const char *str2) {
     return NULL; 
 }
 
+void preencher(int *vet, int tam, int valor) {
+    int *fim = vet + tam;
+
+    for (int *ptr = vet; ptr < fim; ptr++) {
+        *ptr = valor;
+    }
+}
+
+void imprimirVetor(int *vet, int tam) {
+    printf("[ ");
+    for (int i = 0; i < tam; i++) {
+        printf("%d ", vet[i]);
+    }
+    printf("]\n");
+}
+
+void mostrarVetor(int *vetor, int tamanho) {
+    int *fim = vetor + tamanho;
+
+    printf("Elementos do vetor: ");
+    for (; vetor < fim; vetor++) {
+        printf("%d ", *vetor);
+    }
+
+    printf("\n");
+}
+
+
+
 int main(){
     /*
     Exercicio 1
@@ -43,7 +79,43 @@ int main(){
 
     
     Exercicio 2
-    */
+    int tamanho_vetor = 10;
+    int meu_vetor[tamanho_vetor];
+    int valor_preenchimento = 7;
 
+    printf("Vetor antes:\n");
+    imprimirVetor(meu_vetor, tamanho_vetor);
+
+    preencher(meu_vetor, tamanho_vetor, valor_preenchimento);
+
+    printf("Vetor após:\n", valor_preenchimento);
+    imprimirVetor(meu_vetor, tamanho_vetor);
+
+
+    Exercício 3
+    int numeros[] = {10, 20, 30, 40, 50, 60, 70};
+    int tamanho = sizeof(numeros) / sizeof(numeros[0]);
+
+    mostrarVetor(numeros, tamanho);
+    
+
+    Exercício 4
+    */
+    int a;
+    int *b;
+    int **c;
+    int ***d;
+
+    printf("Digite um valor inteiro: ");
+    scanf("%d", &a);
+
+    b = &a; 
+    c = &b; 
+    d = &c; 
+
+    printf("O dobro: %d\n", (*b) * 2);
+    printf("O triplo: %d\n", (**c) * 3);
+    printf("O quadruplo: %d\n", (***d) * 4);
+    
 return 0;
 }
