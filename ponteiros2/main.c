@@ -100,7 +100,6 @@ int main(){
     
 
     Exercício 4
-    */
     int a;
     int *b;
     int **c;
@@ -116,6 +115,7 @@ int main(){
     printf("O dobro: %d\n", (*b) * 2);
     printf("O triplo: %d\n", (**c) * 3);
     printf("O quadruplo: %d\n", (***d) * 4);
-    
+    */
+
 return 0;
 }
