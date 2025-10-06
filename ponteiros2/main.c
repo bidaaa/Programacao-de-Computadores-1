@@ -9,7 +9,7 @@ RA: 25070323
 Data: 30/09/2025
 */
 
-const char* contem_string(const char *str, const char *str2) {
+const char* exercicio1(const char *str, const char *str2) {
     if (str == NULL || str2 == NULL) {
         return NULL;
     }
@@ -44,7 +44,7 @@ void preencher(int *vet, int tam, int valor) {
     }
 }
 
-void imprimirVetor(int *vet, int tam) {
+void exercicio2(int *vet, int tam) {
     printf("[ ");
     for (int i = 0; i < tam; i++) {
         printf("%d ", vet[i]);
@@ -52,7 +52,7 @@ void imprimirVetor(int *vet, int tam) {
     printf("]\n");
 }
 
-void mostrarVetor(int *vetor, int tamanho) {
+void exercicio3(int *vetor, int tamanho) {
     int *fim = vetor + tamanho;
 
     printf("Elementos do vetor: ");
@@ -71,7 +71,7 @@ int main(){
     const char *texto = "O rato roeu a roupa do rei de Roma.";
     const char *string2 = "roupa";  
 
-    if (contem_string(texto, string2)) {
+    if (exercicio1(texto, string2)) {
         printf("A string \"%s\" foi encontrada em \"%s\".\n", string2, texto);
     } else {
         printf("A string \"%s\" não foi encontrada em \"%s\".\n", string2, texto);
@@ -84,19 +84,19 @@ int main(){
     int valor_preenchimento = 7;
 
     printf("Vetor antes:\n");
-    imprimirVetor(meu_vetor, tamanho_vetor);
+    exercicio2(meu_vetor, tamanho_vetor);
 
     preencher(meu_vetor, tamanho_vetor, valor_preenchimento);
 
     printf("Vetor após:\n", valor_preenchimento);
-    imprimirVetor(meu_vetor, tamanho_vetor);
+    exercicio2(meu_vetor, tamanho_vetor);
 
 
     Exercício 3
     int numeros[] = {10, 20, 30, 40, 50, 60, 70};
     int tamanho = sizeof(numeros) / sizeof(numeros[0]);
 
-    mostrarVetor(numeros, tamanho);
+    exercicio3(numeros, tamanho);
     
 
     Exercício 4
