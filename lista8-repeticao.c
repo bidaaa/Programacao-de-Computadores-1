@@ -3,7 +3,7 @@
 #include <math.h>
 
 /*
-Lista de Exercícios 8 - Repertição
+Lista de Exercícios 8 - Repetição
 Autor: Vinicius Ribas Bida
 Data: 28/04/2025
 RA: 25070323
