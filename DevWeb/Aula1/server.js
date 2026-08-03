@@ -39,6 +39,23 @@ app.delete('/:id', (req,res) => {
     res.status(200).send("Contato deletado com sucesso")
 })
 
+app.put('/:id', (req,res) => {
+    const id = parseInt(req.params.id)
+    const contato = agenda.find(c => c.id === id)
+
+    if(!contato){
+        res.status(404).send({message: "Contato não encontrado"})
+        return
+    }
+
+    const contatoAlterar = req.body
+    const campos = Object.keys(contatoAlterar)
+    for (let c of campos){
+        contato[c] = contatoAlterar[c]
+    }
+    res.status(200).send({message: "Contato atualizado com sucesso"})
+})
+
 app.listen(port, () => {
   console.log("Server ligado");
 });
